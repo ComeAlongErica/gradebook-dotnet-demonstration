@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace GradeBook
@@ -21,8 +22,31 @@ namespace GradeBook
                 average += grade;
                 System.Console.WriteLine(grade);
             }
-            average = average/grades.Count;
+            average = average / grades.Count;
             System.Console.WriteLine($"The average grade is {average:N1}.");
+        }
+        public void GetHighestGrade()
+        {
+            var highestGrade = double.MinValue;
+
+            foreach (var grade in grades)
+            {
+                highestGrade = Math.Max(grade, highestGrade);
+            }
+
+            System.Console.WriteLine($"The highest grade is {highestGrade:N1}.");
+        }
+
+        public void GetLowestGrade()
+        {
+            var lowestGrade = double.MaxValue;
+
+            foreach (var grade in grades)
+            {
+                lowestGrade = Math.Min(grade, lowestGrade);
+            }
+
+            System.Console.WriteLine($"The lowest grade is {lowestGrade:N1}.");
         }
         private List<double> grades;
         private string name;

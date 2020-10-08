@@ -4,9 +4,10 @@ namespace GradeBook
 {
     class Book
     {
-        public Book()
+        public Book(string name)
         {
             grades = new List<double>();
+            this.name = name;
         }
         public void AddGrade(double newGrade)
         {
@@ -23,7 +24,8 @@ namespace GradeBook
             average = average/grades.Count;
             System.Console.WriteLine($"The average grade is {average:N1}.");
         }
-        List<double> grades;
+        private List<double> grades;
+        private string name;
 
     }
 }

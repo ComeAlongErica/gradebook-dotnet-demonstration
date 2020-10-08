@@ -48,6 +48,12 @@ namespace GradeBook
 
             System.Console.WriteLine($"The lowest grade is {lowestGrade:N1}.");
         }
+        public void ShowStats()
+        {
+            GetHighestGrade();
+            GetLowestGrade();
+            GetAverage();
+        }
         private List<double> grades;
         private string name;
 

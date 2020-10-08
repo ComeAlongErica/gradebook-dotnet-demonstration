@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace GradeBook
+﻿namespace GradeBook
 {
     class Program
     {
@@ -13,9 +10,7 @@ namespace GradeBook
             book.AddGrade(88.3);
             book.AddGrade(65.7);
 
-            book.GetAverage();
-            book.GetHighestGrade();
-            book.GetLowestGrade();
+            book.ShowStats();
         }
     }
 }

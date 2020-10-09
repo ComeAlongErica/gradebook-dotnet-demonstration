@@ -23,7 +23,6 @@ namespace GradeBook
                 System.Console.WriteLine(grade);
             }
             average = average / grades.Count;
-            System.Console.WriteLine($"The average grade is {average:N1}.");
             return average.ToString("0.00");
         }
         public string GetHighestGrade()
@@ -35,7 +34,6 @@ namespace GradeBook
                 highestGrade = Math.Max(grade, highestGrade);
             }
 
-            System.Console.WriteLine($"The highest grade is {highestGrade:N1}.");
             return highestGrade.ToString("0.00");
         }
 
@@ -48,15 +46,17 @@ namespace GradeBook
                 lowestGrade = Math.Min(grade, lowestGrade);
             }
 
-            System.Console.WriteLine($"The lowest grade is {lowestGrade:N1}.");
             return lowestGrade.ToString("0.00");
 
         }
-        public void ShowStats()
+        public Statistics GetStats()
         {
-            GetHighestGrade();
-            GetLowestGrade();
-            GetAverage();
+            var result = new Statistics();
+            result.High = GetHighestGrade();
+            result.Low = GetLowestGrade();
+            result.Average = GetAverage();
+
+            return result;
         }
         private List<double> grades;
         private string name;
